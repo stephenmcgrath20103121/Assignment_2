@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.assignment_2.controllers.GameController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="The Game System"/>
+    <Button fx:id="display" onAction="#display" text="List: "/>
+    <TextField fx:id="addName" promptText="add Game Name "/>
+    <TextField fx:id="addPublisher" promptText="add Game Publisher" />
+    <TextField fx:id="addDescription" promptText="add Description" />
+    <TextField fx:id="addOriginalDeveloper" promptText="add Original Developer of Game" />
+    <TextField fx:id="addOriginalGamesMachine" promptText="add Original Machine Game Launched On" />
+    <TextField fx:id="addLaunchYear" promptText="add Launch Year" />
+    <TextField fx:id="addCoverArt" promptText="add Cover Art URL" />
+    <Button onAction="#addGames" text="Add" />
+    <Button onAction="#clearGames" text="Clear" />
+
+    <Button onAction="#switchSceneGameToGamesMachine" text="Access Games Machines" />
+    <Button onAction="#switchSceneGameToGamePort" text="Access Game Ports" />
+
+</VBox>
