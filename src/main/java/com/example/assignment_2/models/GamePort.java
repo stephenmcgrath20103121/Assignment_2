@@ -3,13 +3,13 @@ package com.example.assignment_2.models;
 import com.example.assignment_2.controllers.GameController;
 
 public class GamePort {
-    private Game portedGame;
-    private GamesMachine gamesMachinePortedTo;
+    private String portedGame;
+    private String gamesMachinePortedTo;
     private String portDeveloper="";
     private int launchYear=1970;
     private String coverArt="";
 
-    public GamePort(Game portedGame, GamesMachine gamesMachinePortedTo, String portDeveloper, int launchYear, String coverArt) {
+    public GamePort(String portedGame, String gamesMachinePortedTo, String portDeveloper, int launchYear, String coverArt) {
         setPortedGame(portedGame);
         setGamesMachinePortedTo(gamesMachinePortedTo);
         setPortDeveloper(portDeveloper);
@@ -17,26 +17,26 @@ public class GamePort {
         setCoverArt(coverArt);
     }
 
-    public Game getPortedGame() {
+    public String getPortedGame() {
         return portedGame;
     }
     public String getPortedGameByName(String name){
-        if(GameController.){
+        if(name.equals(GameController.class.getName())){
+            return name;
+        }else
+            return "Game not in System";
 
-        }else{
-            return "Game not in System"
-        }
     }
 
-    public void setPortedGame(Game portedGame) {
-        this.portedGame = portedGame;
+    public void setPortedGame(String portedGame) {
+        this.portedGame=portedGame;
     }
 
-    public GamesMachine getGamesMachinePortedTo() {
+    public String getGamesMachinePortedTo() {
         return gamesMachinePortedTo;
     }
 
-    public void setGamesMachinePortedTo(GamesMachine gamesMachinePortedTo) {
+    public void setGamesMachinePortedTo(String gamesMachinePortedTo) {
         this.gamesMachinePortedTo = gamesMachinePortedTo;
     }
 

@@ -21,7 +21,7 @@ public class GameController {
         String publisher=addPublisher.getText();
         String description=addDescription.getText();
         String originalDeveloper=addOriginalDeveloper.getText();
-        GamesMachine originalGamesMachine=;
+        String originalGamesMachine = addOriginalGamesMachine.getText();
         int launchYear=Integer.parseInt(addLaunchYear.getText());
         String coverArt=addCoverArt.getText();
 
