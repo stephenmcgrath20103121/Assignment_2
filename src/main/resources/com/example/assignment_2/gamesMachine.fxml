@@ -6,6 +6,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Text?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.assignment_2.controllers.GamesMachineController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
@@ -23,6 +24,11 @@
     <TextField fx:id="addImage" promptText="add Image URL" />
     <Button onAction="#addGamesMachines" text="Add" />
     <Button onAction="#clearGamesMachines" text="Clear" />
+
+    <TextField fx:id="removeName" promptText="name of Machine to Remove" />
+    <Button onAction="#removeGamesMachine" text="Remove" />
+    <TextField fx:id="editName" promptText="name of Machine to Edit" />
+    <Button onAction="#editGamesMachine" text="Edit" />
 
     <Button onAction="#switchSceneGamesMachineToGame" text="Access Games" />
 

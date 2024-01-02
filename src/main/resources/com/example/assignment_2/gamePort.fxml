@@ -21,6 +21,11 @@
     <Button onAction="#addGamePorts" text="Add" />
     <Button onAction="#clearGamePorts" text="Clear" />
 
+    <TextField fx:id="removeName" promptText="name of Game Port to Remove" />
+    <Button onAction="#removeGamePort" text="Remove" />
+    <TextField fx:id="editName" promptText="name of Port to Edit" />
+    <Button onAction="#editGamePort" text="Edit" />
+
     <Button onAction="#switchSceneGamePortToGame" text="Access Games" />
 
 </VBox>

@@ -23,6 +23,11 @@
     <Button onAction="#addGames" text="Add" />
     <Button onAction="#clearGames" text="Clear" />
 
+    <TextField fx:id="removeName" promptText="name of Game to Remove" />
+    <Button onAction="#removeGame" text="Remove" />
+    <TextField fx:id="editName" promptText="name of Game to Edit" />
+    <Button onAction="#editGame" text="Edit" />
+
     <Button onAction="#switchSceneGameToGamesMachine" text="Access Games Machines" />
     <Button onAction="#switchSceneGameToGamePort" text="Access Game Ports" />
 

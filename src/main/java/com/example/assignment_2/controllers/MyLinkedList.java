@@ -9,11 +9,16 @@ public class MyLinkedList<P> {
         head=fn;
     }
 
-    public void remove(P n){
+    public boolean remove(P n){
         MyNode<P> k=head;
-        while(k!=n){
+        while(k.next!=null){
+            if(k.next.getContents().equals(n)){
+               k.next=k.next.next;
+               return true;
+            }
             k=k.next;
         }
+        return false;
     }
 
     public void clear(){head=null;}
