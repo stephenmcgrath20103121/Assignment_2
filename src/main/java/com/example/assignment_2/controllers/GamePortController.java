@@ -18,8 +18,8 @@ public class GamePortController {
 
     @FXML
     protected void addGamePorts(){
-        Game portedGame=;
-        GamesMachine gamesMachinePortedTo=;
+        String portedGame= Game.class.getName();
+        String gamesMachinePortedTo= addGamesMachinePortedTo.getText();
         String portDeveloper=addPortDeveloper.getText();
         int launchYear=Integer.parseInt(addLaunchYear.getText());
         String coverArt=addCoverArt.getText();
@@ -44,7 +44,7 @@ public class GamePortController {
         return allGamePorts;
     }
 
-    public void setAllGameports(MyLinkedList<GamePort> allGamePorts) {
+    public void setAllGamePorts(MyLinkedList<GamePort> allGamePorts) {
         this.allGamePorts = allGamePorts;
     }
 

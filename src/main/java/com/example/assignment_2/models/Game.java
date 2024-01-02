@@ -5,11 +5,11 @@ public class Game {
     private String publisher="";
     private String description="";
     private String originalDeveloper="";
-    private GamesMachine originalGamesMachine;
+    private String originalGamesMachine;
     private int launchYear=1970;
     private String coverArt="";
 
-    public Game(String name, String publisher, String description, String originalDeveloper, GamesMachine originalGamesMachine, int launchYear, String coverArt) {
+    public Game(String name, String publisher, String description, String originalDeveloper, String originalGamesMachine, int launchYear, String coverArt) {
         setName(name);
         setPublisher(publisher);
         setDescription(description);
@@ -51,11 +51,11 @@ public class Game {
         this.originalDeveloper = originalDeveloper;
     }
 
-    public GamesMachine getOriginalGamesMachine() {
+    public String getOriginalGamesMachine() {
         return originalGamesMachine;
     }
 
-    public void setOriginalGamesMachine(GamesMachine originalGamesMachine) {
+    public void setOriginalGamesMachine(String originalGamesMachine) {
         this.originalGamesMachine = originalGamesMachine;
     }
 
