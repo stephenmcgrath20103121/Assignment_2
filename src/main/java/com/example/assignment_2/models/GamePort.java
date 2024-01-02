@@ -66,12 +66,12 @@ public class GamePort {
 
     @Override
     public String toString() {
-        return "GamePort{" +
-                "portedGame=" + portedGame +
-                ", gamesMachinePortedTo=" + gamesMachinePortedTo +
-                ", portDeveloper='" + portDeveloper + '\'' +
-                ", launchYear=" + launchYear +
-                ", coverArt='" + coverArt + '\'' +
-                '}';
+        return
+                "portedGame: " + portedGame +
+                " gamesMachinePortedTo: " + gamesMachinePortedTo +
+                " portDeveloper: " + portDeveloper + '\'' +
+                " launchYear: " + launchYear + '\'' +
+                " coverArt: " + coverArt
+                ;
     }
 }
