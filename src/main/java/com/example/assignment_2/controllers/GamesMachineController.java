@@ -14,7 +14,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class GamesMachineController {
-    private MyLinkedList<GamesMachine> allGamesMachines=new MyLinkedList<>();
+    private static MyLinkedList<GamesMachine> allGamesMachines=new MyLinkedList<>();
 
     @FXML
     private TextField addName,addManufacturer, addDescription, addType, addMedia, addLaunchYear, addRetailPrice, addImage, removeName, editName;
@@ -58,9 +58,76 @@ public class GamesMachineController {
         return allGamesMachines;
     }
 
-    public GamesMachine getGamesMachineByName(String name){
-        GamesMachine m =allGamesMachines.find(name);
-        return m;
+    public static GamesMachine getGamesMachineByName(String name) {
+        MyNode<GamesMachine> temp =allGamesMachines.head;
+
+        while (temp != null && !temp.getContents().getName().equals(name)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static GamesMachine getGamesMachineByManufacturer(String manufacturer) {
+        MyNode<GamesMachine> temp =allGamesMachines.head;
+
+        while (temp != null && !temp.getContents().getManufacturer().equals(manufacturer)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static GamesMachine getGamesMachineByDescription(String description) {
+        MyNode<GamesMachine> temp = allGamesMachines.head;
+
+        while (temp != null && !temp.getContents().getDescription().equals(description)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static GamesMachine getGamesMachineByType(String type) {
+        MyNode<GamesMachine> temp =allGamesMachines.head;
+
+        while (temp != null && !temp.getContents().getType().equals(type)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static GamesMachine getGamesMachineByMedia(String media) {
+        MyNode<GamesMachine> temp =allGamesMachines.head;
+
+        while (temp != null && !temp.getContents().getMedia().equals(media)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static GamesMachine getGamesMachineByLaunchYear(int launchYear) {
+        MyNode<GamesMachine> temp =allGamesMachines.head;
+
+        while (temp != null && !(temp.getContents().getLaunchYear()==launchYear)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static GamesMachine getGamesMachineByRetailPrice(float retailPrice) {
+        MyNode<GamesMachine> temp =allGamesMachines.head;
+
+        while (temp != null && !(temp.getContents().getRetailPrice()==retailPrice)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static GamesMachine getGamesMachineByImage(String image) {
+        MyNode<GamesMachine> temp =allGamesMachines.head;
+
+        while (temp != null && !temp.getContents().getImage().equals(image)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
     }
 
     public void setAllGamesMachines(MyLinkedList<GamesMachine> allGamesMachines) {

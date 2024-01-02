@@ -1,6 +1,6 @@
 package com.example.assignment_2.controllers;
 public class MyLinkedList<P> {
-    private MyNode<P> head=null;
+    protected MyNode<P> head=null;
 
     public void add(P n){
         MyNode<P> fn=new MyNode<>();

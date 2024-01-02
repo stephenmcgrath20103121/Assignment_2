@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class GamePortController {
-    private MyLinkedList<GamePort> allGamePorts=new MyLinkedList<>();
+    private static MyLinkedList<GamePort> allGamePorts=new MyLinkedList<>();
 
     @FXML
     private TextField addPortedGame,addGamesMachinePortedTo, addPortDeveloper, addLaunchYear, addCoverArt, removeName, editName;
@@ -44,9 +44,49 @@ public class GamePortController {
         return allGamePorts;
     }
 
-    public GamePort getGamePortByName(String name){
-        GamePort p =allGamePorts.find(name);
-        return p;
+    public static GamePort getGamePortByName(String name) {
+        MyNode<GamePort> temp =allGamePorts.head;
+
+        while (temp != null && !temp.getContents().getPortedGame().equals(name)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static GamePort getGamePortByMachinePortedTo(String machinePortedTo) {
+        MyNode<GamePort> temp =allGamePorts.head;
+
+        while (temp != null && !temp.getContents().getGamesMachinePortedTo().equals(machinePortedTo)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static GamePort getGamePortByPortDeveloper(String portDeveloper) {
+        MyNode<GamePort> temp =allGamePorts.head;
+
+        while (temp != null && !temp.getContents().getPortDeveloper().equals(portDeveloper)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static GamePort getGamePortByLaunchYear(int launchYear) {
+        MyNode<GamePort> temp =allGamePorts.head;
+
+        while (temp != null && !(temp.getContents().getLaunchYear()==launchYear)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static GamePort getGamePortByCoverArt(String coverArt) {
+        MyNode<GamePort> temp =allGamePorts.head;
+
+        while (temp != null && !temp.getContents().getCoverArt().equals(coverArt)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
     }
 
     public void setAllGamePorts(MyLinkedList<GamePort> allGamePorts) {

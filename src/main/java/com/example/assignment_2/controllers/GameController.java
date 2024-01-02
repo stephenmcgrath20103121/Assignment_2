@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class GameController {
-    private MyLinkedList<Game> allGames=new MyLinkedList<>();
+    private static MyLinkedList<Game> allGames=new MyLinkedList<>();
 
     @FXML
     private TextField addName,addPublisher, addDescription, addOriginalDeveloper, addOriginalGamesMachine, addLaunchYear, addCoverArt, removeName, editName;
@@ -49,9 +49,67 @@ public class GameController {
         return allGames;
     }
 
-    public Game getGameByName(String name){
-        Game g =allGames.find(name);
-        return g;
+    public static Game getGameByName(String name) {
+        MyNode<Game> temp =allGames.head;
+
+        while (temp != null && !temp.getContents().getName().equals(name)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static Game getGameByPublisher(String publisher) {
+        MyNode<Game> temp =allGames.head;
+
+        while (temp != null && !temp.getContents().getPublisher().equals(publisher)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static Game getGameByDescription(String description) {
+        MyNode<Game> temp =allGames.head;
+
+        while (temp != null && !temp.getContents().getDescription().equals(description)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static Game getGameByOriginalDeveloper(String originalDeveloper) {
+        MyNode<Game> temp =allGames.head;
+
+        while (temp != null && !temp.getContents().getOriginalDeveloper().equals(originalDeveloper)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static Game getGameByOriginalGamesMachine(String originalGamesMachine) {
+        MyNode<Game> temp =allGames.head;
+
+        while (temp != null && !temp.getContents().getOriginalGamesMachine().equals(originalGamesMachine)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static Game getGameByLaunchYear(int launchYear) {
+        MyNode<Game> temp =allGames.head;
+
+        while (temp != null && !(temp.getContents().getLaunchYear()==launchYear)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
+    }
+
+    public static Game getGameByCoverArt(String coverArt) {
+        MyNode<Game> temp =allGames.head;
+
+        while (temp != null && !temp.getContents().getCoverArt().equals(coverArt)) {
+            temp = temp.next;
+        }
+        return temp == null ? null : temp.getContents();
     }
 
     public void setAllGames(MyLinkedList<Game> allGames) {
