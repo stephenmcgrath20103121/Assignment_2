@@ -87,15 +87,15 @@ public class GamesMachine {
 
     @Override
     public String toString() {
-        return "GamesMachine{" +
-                "name='" + name + '\'' +
-                ", manufacturer='" + manufacturer + '\'' +
-                ", description='" + description + '\'' +
-                ", type='" + type + '\'' +
-                ", media='" + media + '\'' +
-                ", launchYear=" + launchYear +
-                ", retailPrice=" + retailPrice +
-                ", image='" + image + '\'' +
-                '}';
+        return
+                "name: " + name + '\'' +
+                " manufacturer: " + manufacturer + '\'' +
+                " description: " + description + '\'' +
+                " type: " + type + '\'' +
+                " media: " + media + '\'' +
+                " launchYear: " + launchYear + '\'' +
+                " retailPrice: " + retailPrice + '\'' +
+                " image: " + image
+                ;
     }
 }

@@ -76,7 +76,7 @@ public class MyHashTable {
 
 /*
     * **ADDITIONAL NOTES FROM AID**
-    * Your MyHashMap(MYHashTable) object will be instantiated and called as such:
+    * Your MYHashTable object will be instantiated and called as such:
     * MyHashTable obj = new MyHashTable();
     * obj.put(key,value);
     * int param_2 = obj.get(key);
