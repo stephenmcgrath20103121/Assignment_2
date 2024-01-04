@@ -2,10 +2,14 @@ package com.example.assignment_2.controllers;
 
 import com.example.assignment_2.ServiceApplication;
 import com.example.assignment_2.models.Game;
-import com.example.assignment_2.models.GamesMachine;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class GameController {
     private static MyLinkedList<Game> allGames=new MyLinkedList<>();
@@ -164,8 +168,29 @@ public class GameController {
         display.setText(allGames.display());
     }
 
+    @FXML
+    public void loadGames() throws Exception {
+        Class<?>[] classes = new Class[] { Game.class };
+
+        XStream xstream = new XStream(new DomDriver());
+        XStream.setupDefaultSecurity(xstream);
+        xstream.allowTypes(classes);
+
+        ObjectInputStream is = xstream.createObjectInputStream(new FileReader(fileName()));
+        allGames = (MyLinkedList<Game>) is.readObject();
+        is.close();
+    }
+
+    @FXML
+    protected void saveGames() throws Exception {
+        XStream xstream = new XStream(new DomDriver());
+        ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(fileName()));
+        out.writeObject(allGames);
+        out.close();
+    }
+
     public String fileName(){
-        return "games.xml";
+        return "savedGames.xml";
     }
 
     @FXML

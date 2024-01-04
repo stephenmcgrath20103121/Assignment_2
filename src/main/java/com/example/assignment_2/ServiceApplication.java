@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 
 public class ServiceApplication extends Application {
     public static Scene scene,scene2,scene3;
@@ -14,13 +14,13 @@ public class ServiceApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ServiceApplication.class.getResource("gamesMachine.fxml"));
-        scene = new Scene(fxmlLoader.load(), 800, 600);
+        scene = new Scene(fxmlLoader.load(), 1000, 800);
 
         fxmlLoader=new FXMLLoader(ServiceApplication.class.getResource("game.fxml"));
-        scene2=new Scene(fxmlLoader.load(),800,600);
+        scene2=new Scene(fxmlLoader.load(),1000,800);
 
         fxmlLoader=new FXMLLoader(ServiceApplication.class.getResource("gamePort.fxml"));
-        scene3=new Scene(fxmlLoader.load(),800,600);
+        scene3=new Scene(fxmlLoader.load(),1000,800);
 
         stage.setTitle("Retro Games Information System");
         stage.setScene(scene);

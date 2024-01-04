@@ -185,8 +185,29 @@ public class GamesMachineController {
         display.setText(allGamesMachines.display());
     }
 
+    @FXML
+    public void loadGamesMachines() throws Exception {
+        Class<?>[] classes = new Class[] { GamesMachine.class };
+
+        XStream xstream = new XStream(new DomDriver());
+        XStream.setupDefaultSecurity(xstream);
+        xstream.allowTypes(classes);
+
+        ObjectInputStream is = xstream.createObjectInputStream(new FileReader(fileName()));
+        allGamesMachines = (MyLinkedList<GamesMachine>) is.readObject();
+        is.close();
+    }
+
+    @FXML
+    protected void saveGamesMachines() throws Exception {
+        XStream xstream = new XStream(new DomDriver());
+        ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(fileName()));
+        out.writeObject(allGamesMachines);
+        out.close();
+    }
+
     public String fileName(){
-        return "gameMachines.xml";
+        return "savedGamesMachines.xml";
     }
 
     @FXML

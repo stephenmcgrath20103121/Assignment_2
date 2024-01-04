@@ -3,10 +3,14 @@ package com.example.assignment_2.controllers;
 import com.example.assignment_2.ServiceApplication;
 import com.example.assignment_2.models.Game;
 import com.example.assignment_2.models.GamePort;
-import com.example.assignment_2.models.GamesMachine;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class GamePortController {
     private static MyLinkedList<GamePort> allGamePorts=new MyLinkedList<>();
@@ -135,8 +139,29 @@ public class GamePortController {
         display.setText(allGamePorts.display());
     }
 
+    @FXML
+    public void loadGamePorts() throws Exception {
+        Class<?>[] classes = new Class[] { GamePort.class };
+
+        XStream xstream = new XStream(new DomDriver());
+        XStream.setupDefaultSecurity(xstream);
+        xstream.allowTypes(classes);
+
+        ObjectInputStream is = xstream.createObjectInputStream(new FileReader(fileName()));
+        allGamePorts = (MyLinkedList<GamePort>) is.readObject();
+        is.close();
+    }
+
+    @FXML
+    protected void saveGamePorts() throws Exception {
+        XStream xstream = new XStream(new DomDriver());
+        ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(fileName()));
+        out.writeObject(allGamePorts);
+        out.close();
+    }
+
     public String fileName(){
-        return "gamePorts.xml";
+        return "savedGamePorts.xml";
     }
 
     @FXML

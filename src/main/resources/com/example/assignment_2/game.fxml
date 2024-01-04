@@ -27,6 +27,8 @@
     <Button onAction="#removeGame" text="Remove" />
     <TextField fx:id="editName" promptText="name of Game to Edit" />
     <Button onAction="#editGame" text="Edit" />
+    <Button onAction="#saveGames" text="Save" />
+    <Button onAction="#loadGames" text="Load" />
 
     <Button onAction="#switchSceneGameToGamesMachine" text="Access Games Machines" />
     <Button onAction="#switchSceneGameToGamePort" text="Access Game Ports" />
