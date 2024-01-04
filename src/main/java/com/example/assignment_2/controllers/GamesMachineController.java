@@ -4,6 +4,8 @@ import com.example.assignment_2.ServiceApplication;
 import com.example.assignment_2.models.Game;
 import com.example.assignment_2.models.GamePort;
 import com.example.assignment_2.models.GamesMachine;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
